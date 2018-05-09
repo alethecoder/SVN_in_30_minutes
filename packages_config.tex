@@ -1,0 +1,97 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% PACKAGES CONFIGURATION %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%**hyperref settings******************************************
+\hypersetup{
+    %bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,      % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    %
+    %
+    pdftitle={SVN in 30 minutes},           % title
+    pdfauthor={Ale theCoder},        % author
+    pdfsubject={Version Control System},    % subject of the document
+    pdfcreator={\LaTeX\ with package \flqq hyperref\frqq},   % creator of the document
+    pdfproducer={pdfeTeX-0.\the\pdftexversion\pdftexrevision}, % producer of the document
+    pdfkeywords={SVN}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+%*************************************************************
+%
+%
+% include colours
+\input{colours.tex}                                     % read the color definitions
+%
+% configure bash code appearance
+\lstdefinestyle{DOS}{                                   % define custom environment - DOS
+language =          bash,                   		    % sets the language code to be listed - bash
+backgroundcolor =   \color{backgroundGrey},             % sets the background color -> black
+basicstyle =        \footnotesize\color{GrayCC}\ttfamily,% sets the size of the fonts used for the code
+keywordstyle =      \color{black},                      % sets language keyword colors
+stringstyle =       \color{black},      		        % sets string color
+commentstyle =      \color{commentBlue},       		    % sets comment colors
+%identifierstyle =   \ttfamily,                   		% sets font code as BeraMono
+breaklines =        true,               				% sets automatic line breaking
+breakatwhitespace = true,                       		% allows automatic breaks only at white space
+showstringspaces =  false,              				% blank spaces in strings do not appear as underscore
+showtabs =          false,              				% do not show tabs space with underscores
+rulecolor =         \color{GrayCC},      				% sets the frame color
+%fillcolor =         \color{Paper},              		% sets the fill frame color
+%framerule =         .6pt                        		% sets the width of the rules
+frame =             single,             				% sets a single frame around the code
+frameround =        tttt,                       		% sets rounded frame corner
+numbers =           left,               				% sets line-numbers on left side
+stepnumber =        1,                  				% sets step between two line-numbers
+numberstyle =       \tiny,              				% sets the size of the fonts used for the line-numbers
+numbersep =         5pt,                				% how far the line-numbers are from the code
+%		
+captionpos =        b,                  				% sets the caption-position to bottom
+escapeinside =      {\%*}{*)},          				% if you want to add LaTeX within your code
+keepspaces =        true,               				% keeps spaces in text, convert tab to spaces
+numbersep =         5pt,                				% how far the line-numbers are from the code
+tabsize =           4                     				% sets default tab size to 4 spaces
+}                                                       % close custom environment - DOS
+
+
+
+\lstdefinestyle{Python}{                                % define custom environment - Python
+language =          Python,                   		    % sets the language code to be listed - Python
+backgroundcolor =   \color{backgroundGrey},             % sets the background color -> default = white
+basicstyle =        \footnotesize,      		        % sets the size of the fonts used for the code
+keywordstyle =      \color{keywordViolet},              % sets language keyword colors
+commentstyle =      \color{commentGreen},       		% sets comment colors
+stringstyle =       \color{stringBlue},      		    % sets string color
+%identifierstyle =   \ttfamily,                   		% sets font code as BeraMono
+breaklines =        true,               				% sets automatic line breaking
+breakatwhitespace = true,                       		% allows automatic breaks only at white space
+showstringspaces =  false,              				% blank spaces in strings do not appear as underscore
+showtabs =          false,              				% do not show tabs space with underscores
+rulecolor =         \color{GrayCC},      				% sets the frame color
+%fillcolor =         \color{Paper},              		% sets the fill frame color
+%framerule =         .6pt                        		% sets the width of the rules
+frame =             single,             				% sets a single frame around the code
+frameround =        tttt,                       		% sets rounded frame corner
+numbers =           left,               				% sets line-numbers on left side
+stepnumber =        1,                  				% sets step between two line-numbers
+numberstyle =       \tiny,              				% sets the size of the fonts used for the line-numbers
+numbersep =         5pt,                				% how far the line-numbers are from the code
+%%		
+captionpos =        b,                  				% sets the caption-position to bottom
+escapeinside =      {\%*}{*)},          				% if you want to add LaTeX within your code
+keepspaces =        true,               				% keeps spaces in text, convert tab to spaces
+numbersep =         5pt,                				% how far the line-numbers are from the code
+tabsize =           4                     				% sets default tab size to 4 spaces
+}                                                       % close custom environment - Python
+
+

@@ -1,0 +1,94 @@
+C:\Users\AleTheCoder\Desktop\Exercises\working>svn info
+Path: .
+Working Copy Root Path: C:\Users\AleTheCoder\Desktop\Exercises\working
+URL: file:///C:/Users/AleTheCoder/Desktop/Exercises/svn%20repo/trunk
+Relative URL: ^/trunk
+Repository Root: file:///C:/Users/AleTheCoder/Desktop/Exercises/svn%20repo
+Repository UUID: 187e5647-e797-8842-a3b1-6eedd41a4370
+Revision: 66
+Node Kind: directory
+Schedule: normal
+Last Changed Author: Ale theCoder
+Last Changed Rev: 66
+Last Changed Date: 2018-01-21 15:25:22 +0000 (Sun, 21 Jan 2018)
+
+
+
+# svn add command - force also already added files
+svn  add --force <filePath>
+
+# svn commit command
+svn commit -m "commit message" <workingPath>
+
+# svn revert command - discard changes of the files under VCS
+svn revert -R <filePath>
+
+# svn update command - do not discard unsaved changes
+svn update <filePath>
+
+# svn checkout command - checkout last revision
+svn checkout <repositoryPath> <filePath>
+
+# svn checkout command - checkout passed revision
+svn checkout <repositoryPath> /@<revNum> <filePath>
+
+# save in the current dir the last version of a specified file
+svn export <repositoryFilePath> --force
+#
+# of course replace the contents of the angle brackets with the one you use
+# for example to add write: svn add --force C:/home/AleTheCoder/Project/
+
+
+
+# prompt TortoiseSVN commit window for the Example
+TortoiseProc /command:commit /closeonend:1 /path:C:\Users\AleTheCoder\Desktop\Exercises\working /logmsg "This is a commit launched from the command window!"
+
+
+
+# Python function to commit the working folder
+def svnCommit(filePath, commitMessage, visible):
+
+    # import module to execute windows commands
+    import subprocess
+
+    # is the visible flag true?
+    if visible:
+
+        # yes -> execute the commit command invoking the TortoiseSVN client
+        cmdCommit = 'TortoiseProc /command:commit /closeonend:1 /path:' + filePath + ' /logmsg ' + '"' + commitMessage + '"'
+
+
+    else:
+
+        # no -> execute the commit command invoking the SVN command like
+        cmdCommit = 'svn commit -m "' + commitMessage + '" ' + filePath
+
+    # execute the command through the window shell
+    cmd = subprocess.call(cmdCommit)
+
+
+
+
+# Test code - run the svnCommit function
+path = "C:\Users\AleTheCoder\Desktop\Exercises\working"
+
+# run the commit through TortoiseSVN
+svnCommit(path, "This is a commit message", True)
+#
+# uncomment to run the commit through SVN
+#svnCommit(path, "This is a commit message", False)
+
+
+# CODE PRESENT IN THE FILE: pre-revprop-change.bat THAT MUST BE COMMENTED OUT
+
+#if [ "$ACTION" = "M" -a "$PROPNAME" = "svn:log" ]; then exit 0; fi
+#echo "Changing revision properties other than svn:log is prohibited" >&2
+#exit 1
+
+# CODE TO ADD AT THE END OF THE FILE: pre-revprop-change.bat
+@echo off
+exit /B 0
+
+
+C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;C:\Program Files\TortoiseSVN\bin
+

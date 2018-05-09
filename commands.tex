@@ -1,0 +1,43 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% COMMANDS DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% load colors files
+\input{colours.tex}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%% GENERAL COMMANDS DEFINITIONS %%%%%%%%%%%%%%%%%%%%%
+%
+% disable auto indent
+\setlength{\parindent}{0mm}
+%
+% make an inline verbatim command
+\newcommand{\plain}[1]{\texttt{\detokenize{#1}}}
+%
+% make a red footnote
+\newcommand{\footrednote}[1]{{\color{red}\footnote{\textit{#1}}}}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%% COLOURS COMMANDS DEFINITIONS %%%%%%%%%%%%%%%%%%%%%
+%
+% define new command to use the defined commands
+%
+% red
+\newcommand{\red}[1]{{\color{red}{#1}}}
+% green
+\newcommand{\green}[1]{{\color{green}{#1}}}
+% blue
+\newcommand{\blue}[1]{{\color{blue}{#1}}}
+% orange
+\newcommand{\orange}[1]{{\color{orange}{#1}}}
+% fuxia
+\newcommand{\fuxia}[1]{{\color{fuxia}{#1}}}
+% gray 30% (inkscape)
+\newcommand{\colorGray}[1]{{\color{gray_30}{#1}}}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%% LISTINGS COMMANDS DEFINITIONS %%%%%%%%%%%%%%%%%%%%%
+%
+% rename the caption listing to list
+\renewcommand{\lstlistingname}{List}
