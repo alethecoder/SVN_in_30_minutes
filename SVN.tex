@@ -117,12 +117,12 @@ Every project has its own repository, that is the space where the project files 
 Normally it lies on a remote machine\footrednote{As wrote in section \ref{section:Intro} this should be a server. To setup a server check the \href{http://svnbook.red-bean.com/}{official documentation}.}, but to make the example fast to be run, we're going to create it locally.
 
 \begin{itemize}
-    \item Choose a directory where execute all the next exercises\footrednote{Mine root exercise folder is named \textit{Exercises}.} and create another folder (here named \textit{svn repo}) that will be used to contain the repository itself.
+    \item Choose a directory where execute all the next exercises\footrednote{My root exercise folder is named \textit{Exercises}.} and create another folder (here named \textit{svn repo}) that will be used to contain the repository itself.
     
     \item Select the \textit{svn repo} folder and create the SVN repository: \textit{TortoiseSVN} $\rightarrow$ \textit{Create repository here} (figure \ref{fig:shellCreateRepository}).
     
     \item A pop-up window will appear (figure \ref{fig:repositoryCreated}) to choose which directory structure must be used for the service. Most of the times the default structure will be fine, then press: \textit{Create folder structure}.\\
-    Repository is now created within all SVN files needed to manage the versioning service.\\
+    Repository is now created with all SVN files needed to manage the versioning service.\\
     A message will confirm the directories creation, and the folder icon will be replaced by a new one (see figure \ref{fig:iconRepository}).
     
 
@@ -165,7 +165,7 @@ You can think at the local folder as it would be a "folder shortcut" of the resp
     \label{fig:svnDirStructure}
 \end{figure}
 
-Developing code using only the main branch (\textit{trunk}) is not the right way to use the VCS. To make full use of a versioning it is advisable keep on the \textit{trunk} only the software version with a complete functions. A branch under the \textit{branches} path should be created when starting to implement a new feature o test some functionality. When a functionality is complete and well integrated can be then merged back in the main software (\textit{trunk} branch).
+Developing code using only the main branch (\textit{trunk}) is not the right way to use the VCS. To make full use of a versioning it is advisable keep on the \textit{trunk} only the software version with complete functions. A branch under the \textit{branches} path should be created when starting to implement a new feature or test some functionality. When a functionality is complete and well integrated it can be then merged back in the main software (\textit{trunk} branch).
 
 Finally the \textit{tags} branch should be used every time that a software is released. This workflow is well depicted in figure \ref{fig:svnWorkflow}.
 
@@ -276,7 +276,7 @@ Every time you make changes into files, of course these are saved, but what abou
 
 In the course of time your project grow with new files, how can you check when these were been added to the project?
 
-As you can see in figure \ref{fig:svnCommitWorkflow}, version control systems allow the user to manage all these aspects; in the follow section will be presented the necessary commands to interact with the repository.
+As you can see in figure \ref{fig:svnCommitWorkflow}, version control systems allow the user to manage all these aspects; in the following section will be presented the necessary commands to interact with the repository.
 
 
 
@@ -386,7 +386,7 @@ At the end of the operation, the folder contents will be represented as in figur
 
 Now as you may have guessed, to store and sync the modified files to the repository it is necessary execute the commit operation (figure \ref{fig:svnCommitWorkflow}).\\
 
-Again, if everything has worked properly SVN will asks to the user to insert an explanatory commit message as seen before (figure \ref{fig:commitMessage}).
+Again, if everything has worked properly SVN will ask to the user to insert an explanatory commit message as seen before (figure \ref{fig:commitMessage}).
 
 \begin{figure}[htbp]
 \begin{subfigure}{0.33\textwidth}
@@ -426,7 +426,7 @@ Again, if everything has worked properly SVN will asks to the user to insert an 
 
 When you work on a common project all files can be edited by anyone in your group, so before you start to work, you have to update your local copy to reflect the changes in the repository that maybe someone did.
 
-If someone change and commit a certain file, your local copy is not more up-to-date with the project development. If you edited the same file without update your local copy first, you could end up with a conflict (figure \ref{fig:svnUpdateFlow}).\\
+If someone change and commit a certain file, your local copy is not more up-to-date with the project development. If you edited the same file without updating your local copy first, you could end up with a conflict (figure \ref{fig:svnUpdateFlow}).\\
 
 
 \begin{figure}[htbp]
@@ -553,7 +553,7 @@ Sometimes you both want to have a peek of each other. Using the update command y
 The last command of this section, is useful when you want to discard all changes made at the project files and revert to the last revision present in the local folder.\\
 
 
-For example after committed your project you want to try to fix a bug, but as soon as you start to edit the code, you realise that there is one more important to be fixed first. So, to quickly restart the job, exactly from the last commit, you have to use the revert command.\\
+For example after committing your project you want to try to fix a bug, but as soon as you start to edit the code, you realise that there is one more important to be fixed first. So, to quickly restart the job, exactly from the last commit, you have to use the revert command.\\
 
 
 \underline{Pay attention that any "update" command does not discard the changes!} This is a desirable behaviour, since we want to avoid losing any development done in the project when wishing to update remaining project files.\\
@@ -673,7 +673,7 @@ When we want to merge into the main program (the \textit{trunk}) a functionality
 
 Referring to our example, let's say that we successfully completed the function created in the branch \textit{niceFunction} and then we want to merge it into the main trunk of our project. \\
 
-Be aware that, to successfully execute the merge command it is necessary be on the folder that \underline{will receive} the update. So if we are still in the branch \textit{niceFunction} it is necessary switch the local copy to the \textit{trunk}.\\
+Be aware that, to successfully execute the merge command it is necessary be on the folder that \underline{will receive} the update. So if we are still in the branch \textit{niceFunction} it is necessary to switch from the local copy to the \textit{trunk}.\\
 
 To merge the example:
 
@@ -695,7 +695,7 @@ To merge the example:
 	Fill the second field with the url of the branch that we want to transfer into the trunk (in this example the \textit{niceFunction}).
 	
     
-    \item We are finally ready to merge both branches. Before execute the command it is preferable test it using the dedicated button (figure \ref{fig:mergeWindow3}). At this point are possible two scenarios:
+    \item We are finally ready to merge both branches. Before executing the command it is preferable to test it using the dedicated button (figure \ref{fig:mergeWindow3}). At this point two scenarios are possible:
     
     \begin{itemize}
     
@@ -790,7 +790,7 @@ In the mean time (since you didn't \textit{update} the project, so you are still
 
 \begin{verbatim}const uint8_t string[] = "Right text";\end{verbatim}
 
-As soon as you want to commit you'll receive a message that warn you about a conflict, and that must be resolved before you'll be able to commit the job.
+As soon as you want to commit you'll receive a message that warn you about a conflict, and that it must be resolved before you'll be able to commit the job.
 
 In this case your working folder icon will look like figure \ref{fig:iconFolderConflict}, while your files like figure \ref{fig:iconFileConflict}.\\
 
@@ -815,7 +815,7 @@ In this case your working folder icon will look like figure \ref{fig:iconFolderC
 \newpage
 
 
-You will see that now in the working folder has different files that you hadn't. In particular for this example they will become:
+You will see that now the working folder has different files that you hadn't. In particular for this example they will become:
 
 
 \begin{itemize}
@@ -852,14 +852,14 @@ uint8_t string[] = "wrong text";>>>>>>> .r52
 The text contained between the symbols "<" and "=" is your updated text.\\
 The text contained between "=" and ">" is the one updated by someone else and related to the revision specified at the end; in this case \textit{52}.\newline
 
-To solve this conflict it is necessary edit\footrednote{Yes! Manually!!!} the file removing \underline{all} the unwanted text; so in this case the previous block must be changed to:
+To solve this conflict it is necessary to edit\footrednote{Yes! Manually!!!} the file removing \underline{all} the unwanted text; so in this case the previous block must be changed to:
 
 \begin{verbatim}
     const uint8_t string[] = "Right text";
 \end{verbatim}
 
 
-To complete the conflict resolution it is necessary notify SVN that the conflict has been solved, using the \textit{resolve} option (figure \ref{fig:shellResolve}). A new window (figure \ref{fig:solveConflict}) will appear letting the user selects which is the file to be marked as solved\footrednote{This is of course necessary in case of conflict on different files.}.\newline
+To complete the conflict resolution it is necessary notify SVN that the conflict has been solved, using the \textit{resolve} option (figure \ref{fig:shellResolve}). A new window (figure \ref{fig:solveConflict}) will appear letting the user select which is the file to be marked as solved\footrednote{This is of course necessary in case of conflict on different files.}.\newline
 
 \begin{figure}[htbp]
 \begin{subfigure}{0.5\textwidth}
@@ -880,7 +880,7 @@ To complete the conflict resolution it is necessary notify SVN that the conflict
 
 Another type of conflict that might arise, is when branches are merged.
 
-Image that someone updated the main \textit{trunk} while you are working on the branch. If quite the same part of code is changed, as we seen, this might led to a conflict.\\
+Image that someone updated the main \textit{trunk} while you are working on the branch. If quite the same part of code is changed, as we saw, this might led to a conflict.\\
 
 
 In this case, when we know that the right code lie in the local repository, or in another branch we can directly choose the relative button (\textit{Prefer local} or \textit{Prefer repository}) to accept the desired file version (figure \ref{fig:editConflict}).\\
@@ -937,7 +937,7 @@ Lastly, to complete the merge, select the the button \textit{Resolved} in the co
 
 Every time you create a stable software that you want to release, you might take note of which commit is, or rather, tag that commit. This will create in the \textit{Tags} folder only well defined working software versions.\\
 
-To tag of a software version we have to proceed quite as we did to make a branch:
+To tag a software version we have to proceed quite as we did to make a branch:
 
 \begin{itemize}
 
@@ -972,7 +972,7 @@ To tag of a software version we have to proceed quite as we did to make a branch
 
 
 \newpage
-Now you end up with a similar situation reported in figure \ref{fig:tagSwVersions}, where every release has its own folder; in this way you will have always at hand the desired software version. You can also add an eventually release note file that contains all details of that version.
+Now you end up with a similar situation reported in figure \ref{fig:tagSwVersions}, where every release has its own folder; in this way you will have always at hand the desired software version. You can also add an eventual release note file that contains all details of that version.
 
 
 
@@ -992,7 +992,7 @@ In this section I will present just some useful functions to use in Subversion. 
 \subsection{Include externals}
 \label{subsection:externals}
 
-In some cases might be really useful pack more repository together, to reuse something that you developed in the past, or to organize a work that has erogenous repositories.\\
+In some cases it might be really useful pack more repository together, to reuse something that you developed in the past, or to organize a work that has heterogeneous repositories.\\
 
 For example, let's say that we want to add a new functionality to our project using a library (that has its own repository) previously developed.
 
@@ -1120,7 +1120,7 @@ Using the \textit{HEAD revision} option you have to take in account even another
 
     \item If the \textit{externals} (\textit{Driver} folder) has a repository (\textit{svn repo lib}) located in the same project repository (\textit{svn repo} folder), any commit done to the library (\textit{library} folder) will be reflected also in the linked folder present in the project (\textit{driver} folder) at the commit time.
     
-    \item If the \textit{externals} (\textit{Driver} folder) has a repository (\textit{svn repo lib}) located on a different path (as we did in this example), any commit done to the library will be notified at the time to commit the project (\textit{working} folder), then to keep the externals up-to-date the user must update first the project folder before commit the entry project\footrednote{This is what I found in the \href{https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug-externals.html}{official documentation}, however when I tested it, its behaviour has been as it had would been in the same project repository. Actually this is a bug, I checked the \href{https://tortoisesvn.net/Changelog.txt}{changelog file}.}.
+    \item If the \textit{externals} (\textit{Driver} folder) has a repository (\textit{svn repo lib}) located on a different path (as we did in this example), any commit done to the library will be notified at the time to commit the project (\textit{working} folder), then to keep the externals up-to-date the user must update first the project folder before committing the entry project\footrednote{This is what I found in the \href{https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug-externals.html}{official documentation}, however when I tested it, its behaviour has been as it had would been in the same project repository. Actually this is a bug, I checked the \href{https://tortoisesvn.net/Changelog.txt}{changelog file}.}.
 
 \end{itemize}
 
@@ -1158,7 +1158,7 @@ If this is text file there should be fewer issues with multiple editors (as seen
 
 To avoid this situation only one person at time should update that types of file.
 
-In this case it is suggested use the SVN lock file function.\\ 
+In this case it is suggested to use the SVN lock file function.\\ 
 
 Before starting to work on a file you should lock it so that other users cannot commit their changes until you have committed yours or voluntarily relinquished the lock.\\
 
@@ -1215,7 +1215,7 @@ Is it possible to prevent this scenario? Yes it is.\\
 
 Subversion has a property that force all working files to be read only (in their default state), except when a lock is applied to a file. In this situation the user will be forced to lock the file before to start to work on it, thus making the file editing mutually exclusive.\newline
 
-To apply this property it is necessary proceed as we did to apply the \textit{externals}, but of course selecting this other.
+To apply this property it is necessary to proceed as we did to apply the \textit{externals}, but of course selecting this other.
 
 \begin{itemize}
 
@@ -1248,18 +1248,18 @@ To apply this property it is necessary proceed as we did to apply the \textit{ex
 \label{fig:svnKeepLocks}
 \end{figure}
 
-Now all files in the working directory are read only. This should be displayed by the gray icon instead of the green one. Unfortunately due to a \href{http://tortoisesvn.tigris.org/faq.html#ovlnotall}{limitation} of the \textit{Microsoft OS} this, doesn't work\footrednote{To see all the available icons go to the \textit{TortoiseSVN} $\rightarrow$ \textit{Settings} and select the Icon Set submenu.}. To fix the problem exist a workaround, but it is more fast (and safe) just open the file and check if this is read/write.\\
+Now all files in the working directory are read only. This should be displayed by the gray icon instead of the green one. Unfortunately due to a \href{http://tortoisesvn.tigris.org/faq.html#ovlnotall}{limitation} of the \textit{Microsoft OS} this, doesn't work\footrednote{To see all the available icons go to the \textit{TortoiseSVN} $\rightarrow$ \textit{Settings} and select the Icon Set submenu.}. To fix the problem a workaround exist, but it is more fast (and safe) just open the file and check if this is read/write.\\
 
-Quite a number of text editor have an icon relating to the read/write state of the file, for example \textit{Notepad++} has an icon on the file tab which the color depends on the file state: gray for read only and blue for a read/write file.\newline
+Quite a number of text editor have an icon relating to the read/write state of the file, for example \textit{Notepad++} has an icon on the file tab whose the color depends on the file state: gray for read only and blue for a read/write file.\newline
 
 
-To run this example is necessary use another "user" from the same machine or a different machine, and of course, create a repository accessible from both users. Create then a local working folder that point to this common repository.\\
+To run this example is necessary to use another "user" from the same machine or a different machine, and of course, create a repository accessible from both users. Create then a local working folder that point to this common repository.\\
 
 \begin{itemize}
 
     \item Lock the file you want to start to work on.
     
-    \item Change user and try to lock the same file. In this case, before start to consume your time you'll been advised that the file has already been locked by the other user (figure \ref{fig:errorFileLocked}).
+    \item Change user and try to lock the same file. In this case, before starting to consume your time you'll been advised that the file has already been locked by the other user (figure \ref{fig:errorFileLocked}).
 
 \end{itemize}
 
@@ -1337,7 +1337,7 @@ label=lst:svnAllCommands, %
 firstline=17, lastline=39]{srcCode/svnCommands.txt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In some cases, like before a commit, you could want to make appear a dialog box.
+In some cases, like before a commit, you might want to make appear a dialog box.
 
 You can do easily invoking the TortoiseSVN shell\footrednote{To find out more visit the \href{https://tortoisesvn.net/docs/nightly/TortoiseSVN_en/tsvn-automation.html}{official page}.}.\newline
 
@@ -1356,7 +1356,7 @@ You will see appear the same window that you see when you call the commit from t
 
 
 
-Of course has not really sense launch these command from the system \textit{cmd} when you have the shell. These are in fact useful when you have a program that need to interact with SVN (like a Python script).
+Of course it has not really sense to launch these command from the system \textit{cmd} when you have the shell. These are in fact useful when you have a program that need to interact with SVN (like a Python script).
 
 To show you how to use these commands I created a Python function to invoke the commit command in both versions: using TortoiseSVN and using the SVN command line (list \ref{lst:PythonCommitFunction}).
 
@@ -1472,7 +1472,7 @@ Now that file will be no longer "linked" to the VCS. If you only would delete th
 \textit{I tried to rename a file, but it doesn't look under version control, and when I update the old file still exist\ldots}\newline
 
 This is correct, since you renamed the file using the system command and not SVN. I'll try to show you why.
-For example, you want rename the file \textit{f2.txt} that is actually under version control, since has been added at the project creation. Now, using the Windows shell, you rename it to \textit{fileFunction.c}. At this point SVN doesn't see anymore that file, it is like it was deleted, so in case of the \textit{update} command, this will be copied again to the working folder. Even more the renamed file is not under version control. As you might have guessed to rename the file you have to use the TortoiseSVN shell. This operation can be thought as a series of these commands: \textbf{remove} the file \textit{f2.txt} from the version control system, rename the file to \textit{fileFunction.c} and finally \textbf{adding} it to Subversion.
+For example, you want to rename the file \textit{f2.txt} that is actually under version control, since has been added at the project creation. Now, using the Windows shell, you rename it to \textit{fileFunction.c}. At this point SVN doesn't see anymore that file, it is like it was deleted, so in case of the \textit{update} command, this will be copied again to the working folder. Even more the renamed file is not under version control. As you might have guessed to rename the file you have to use the TortoiseSVN shell. This operation can be thought as a series of these commands: \textbf{remove} the file \textit{f2.txt} from the version control system, rename the file to \textit{fileFunction.c} and finally \textbf{adding} it to Subversion.
 
 
 
@@ -1607,7 +1607,7 @@ SVN has the ability to let the user update the commit message. This function can
 
     \item Select the commit you want to edit from the \textit{Log Messages} window and with the right click choose the option \textit{Edit log message} from the drop-down menu (figure \ref{fig:logMessages}).
     
-    \item A pop-up window will appear, let you change the commit message. Edit the message and confirm.
+    \item A pop-up window will appear, that lets you change the commit message. Edit the message and confirm.
     
 \end{itemize}
 
@@ -1671,7 +1671,7 @@ If the file has been changed properly, re-executing the previous steps will now 
 \label{subsubsectio:FileVersion}
 
 In figure \ref{fig:svnCommitWorkflow} is reported how a version control works without deeply discuss the way that SVN uses to version the project files.
-The following diagram (figure \ref{fig:svnFilesVersion}) explain how Subversion "tags" a file with a certain number. We see that this match the commit number (of the project) where it tooks part. That explains why some file look up-to-date, and others not. You can easily check these numbers comparing the \textit{Log Messages} window and the \textit{Repository Browser} (figure \ref{fig:logMsgVsRepoBrowser})
+The following diagram (figure \ref{fig:svnFilesVersion}) explain how Subversion "tags" a file with a certain number. We see that this match the commit number (of the project) where it took part. That explains why some file look up-to-date, and others not. You can easily check these numbers comparing the \textit{Log Messages} window and the \textit{Repository Browser} (figure \ref{fig:logMsgVsRepoBrowser})
 
 
 
